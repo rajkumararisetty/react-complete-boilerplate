@@ -1,7 +1,7 @@
 /* eslint-disable */
 const merge = require('webpack-merge');
 // Plugins
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const Visualizer = require('webpack-visualizer-plugin');
@@ -32,17 +32,17 @@ const prodConfiguration = env => {
               {
                 loader: 'file-loader',
                 options: {
-                  name: '[path][name]-[hash:8].[ext]'
+                  name: '[path][name]-[hash:8].[ext]',
                 },
               },
-            ]
-          }
-        ]
+            ],
+          },
+        ],
       },
       plugins: [
         new MiniCssExtractPlugin(),
         new OptimizeCssAssetsPlugin(),
-        new Visualizer({ filename: './statistics.html' })
+        new Visualizer({ filename: './statistics.html' }),
       ],
     },
   ]);

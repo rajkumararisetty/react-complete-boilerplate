@@ -37,4 +37,9 @@ module.exports = {
 
   // Indicates whether each individual test should be reported during the run
   verbose: false,
+
+  transform: {
+    '.+\\.(css|styl|less|sass|scss|png|jpg|jpeg|ttf|woff|woff2)$': 'jest-transform-stub',
+    '^.+\\.(js|jsx)?$': 'babel-jest',
+  },
 };
