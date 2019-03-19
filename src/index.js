@@ -6,18 +6,18 @@ import Header from './static/images/header.jpeg';
 class App extends React.Component {
   state = {
     CaptainKirkBio: {},
-    Foo: null
+    Foo: null,
   };
 
   componentDidMount() {
     this.onGetKirkBio();
 
     import(/* webpackChunkName: 'Foo' */ './Foo').then(Foo => {
-      this.setState({Foo: Foo.default});
+      this.setState({ Foo: Foo.default });
     });
   }
 
-  onGetKirkBio = async () => {
+  onGetKirkBio = async (              ) => {
     try {
       const result = await fetch('http://stapi.co/api/v1/rest/character/search', {
         method: 'POST',
@@ -38,7 +38,7 @@ class App extends React.Component {
   };
 
   render() {
-    const { CaptainKirkBio , Foo} = this.state;
+    const { CaptainKirkBio, Foo } = this.state;
     return (
       <div className="app">
         <img alt="header" src={Header} className="app-header" />
