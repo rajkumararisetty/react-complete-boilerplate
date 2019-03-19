@@ -24,6 +24,21 @@ const prodConfiguration = env => {
         // },
         minimizer: [new UglifyJsPlugin()],
       },
+      module: {
+        rules: [
+          {
+            test: /\.(jpg|png|gif|svg|pdf|ico|jpeg)$/,
+            use: [
+              {
+                loader: 'file-loader',
+                options: {
+                  name: '[path][name]-[hash:8].[ext]'
+                },
+              },
+            ]
+          }
+        ]
+      },
       plugins: [
         new MiniCssExtractPlugin(),
         new OptimizeCssAssetsPlugin(),

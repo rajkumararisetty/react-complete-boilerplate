@@ -42,12 +42,8 @@ module.exports = env => {
           new webpack.DefinePlugin({
             'process.env.VERSION': JSON.stringify(VERSION),
             'process.env.PLATFORM': JSON.stringify(PLATFORM)
-          }),
-          new CopyWebpackPlugin([ { from: 'src/static' } ]), // Add this in the plugins section
-        ],
-        devServer: {
-          host: '127.0.0.1',
-        }
+          })
+        ]
       }
     ]
   )
