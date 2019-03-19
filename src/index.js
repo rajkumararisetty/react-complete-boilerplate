@@ -17,7 +17,7 @@ class App extends React.Component {
     });
   }
 
-  onGetKirkBio = async (              ) => {
+  onGetKirkBio = async () => {
     try {
       const result = await fetch('http://stapi.co/api/v1/rest/character/search', {
         method: 'POST',
