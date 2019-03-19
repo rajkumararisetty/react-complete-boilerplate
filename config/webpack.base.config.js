@@ -5,7 +5,6 @@ const merge = require('webpack-merge');
 // Plugins
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyWebpackPlugin = require('copy-webpack-plugin'); // Add this in top
 
 const APP_DIR = path.resolve(__dirname, '../src'); // <===== new stuff added here
 
