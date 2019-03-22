@@ -1,4 +1,4 @@
-body {
-    background-color: skyblue;
-    color: black;
+.welcomeMessage {
+    text-align: center;
+    font-size: xx-large;
 }
