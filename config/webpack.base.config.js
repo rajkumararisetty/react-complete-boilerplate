@@ -25,6 +25,37 @@ module.exports = env => {
           },
           {
             test: /\.(css)$/,
+            exclude: /\.module\.css$/,
+            use: [
+              PLATFORM === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 1,
+                  sourceMap: PLATFORM === 'production',
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    require('postcss-preset-env')({
+                      autoprefixer: {
+                        flexbox: 'no-2009',
+                      },
+                      stage: 3,
+                    }),
+                  ],
+                  sourceMap: PLATFORM === 'production',
+                },
+              },
+            ],
+            sideEffects: true,
+          },
+          {
+            test: /\.module\.css$/,
             use: [
               PLATFORM === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
               {
@@ -53,16 +84,52 @@ module.exports = env => {
                 },
               },
             ],
-            sideEffects: true,
           },
           {
             test: /\.(scss|sass)$/,
+            exclude: /\.module\.(scss|sass)$/,
             use: [
               PLATFORM === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
               {
                 loader: require.resolve('css-loader'),
                 options: {
-                  importLoaders: 1,
+                  importLoaders: 2,
+                  sourceMap: PLATFORM === 'production',
+                },
+              },
+              {
+                loader: require.resolve('postcss-loader'),
+                options: {
+                  ident: 'postcss',
+                  plugins: () => [
+                    require('postcss-flexbugs-fixes'),
+                    require('postcss-preset-env')({
+                      autoprefixer: {
+                        flexbox: 'no-2009',
+                      },
+                      stage: 3,
+                    }),
+                  ],
+                  sourceMap: PLATFORM === 'production',
+                },
+              },
+              {
+                loader: require.resolve('sass-loader'),
+                options: {
+                  sourceMap: PLATFORM === 'production',
+                },
+              },
+            ],
+            sideEffects: true,
+          },
+          {
+            test: /\.module\.(scss|sass)$/,
+            use: [
+              PLATFORM === 'production' ? MiniCssExtractPlugin.loader : 'style-loader',
+              {
+                loader: require.resolve('css-loader'),
+                options: {
+                  importLoaders: 2,
                   sourceMap: PLATFORM === 'production',
                   modules: true,
                   getLocalIdent: getCSSModuleLocalIdent,
