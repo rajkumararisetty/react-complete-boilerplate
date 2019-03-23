@@ -1,7 +1,7 @@
 {
-  "name": "app",
+  "name": "reactive-starter-kit",
   "version": "1.0.0",
-  "description": "",
+  "description": "Starter kit boiler plate for single page react applications",
   "main": "index.js",
   "scripts": {
     "lint": "eslint --debug src/ ; exit 0;",
@@ -14,6 +14,10 @@
     "prebuild": "webpack --mode production --config config/webpack.prod.config.js --env.PLATFORM=production --env.VERSION=stag --progress",
     "build": "node server"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajkumararisetty/react-complete-boilerplate.git"
+  },
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged"
@@ -25,8 +29,19 @@
       "git add"
     ]
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "react",
+    "react-app",
+    "reactive-starter-kit",
+    "react-boilerplate",
+    "react-singlepage-app",
+    "webpack",
+    "jest",
+    "babel",
+    "eslint",
+    "husky"
+  ],
+  "author": "Rajkumar Arisetty",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
@@ -83,5 +98,9 @@
     "webpack-dev-server": "^3.2.1",
     "webpack-merge": "^4.2.1",
     "webpack-visualizer-plugin": "^0.1.11"
-  }
+  },
+  "bugs": {
+    "url": "https://github.com/rajkumararisetty/react-complete-boilerplate/issues"
+  },
+  "homepage": "https://github.com/rajkumararisetty/react-complete-boilerplate#readme"
 }

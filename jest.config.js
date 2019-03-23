@@ -39,7 +39,7 @@ module.exports = {
   verbose: false,
 
   transform: {
-    '.+\\.(css|styl|less|sass|scss|png|jpg|jpeg|ttf|woff|woff2)$': 'jest-transform-stub',
+    '.+\\.(css|styl|less|sass|scss|png|jpg|jpeg|ttf|woff|woff2|gif)$': 'jest-transform-stub',
     '^.+\\.(js|jsx)?$': 'babel-jest',
   },
 };

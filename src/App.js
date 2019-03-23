@@ -8,7 +8,7 @@ class App extends React.Component {
     return (
       <div className={`${AppStylesScss.app} global-color`}>
         <img alt="header" src={Logo} className="app-header" />
-        <p className={AppStylesCss.welcomeMessage}>Welcome to react(ive)-started-kit</p>
+        <p className={AppStylesCss.welcomeMessage}>Welcome to react(ive)-starter-kit</p>
       </div>
     );
   }
