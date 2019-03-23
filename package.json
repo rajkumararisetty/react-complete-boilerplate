@@ -1,6 +1,6 @@
 {
   "name": "reactive-starter-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Starter kit boiler plate for single page react applications",
   "main": "index.js",
   "scripts": {
