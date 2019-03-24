@@ -12,8 +12,15 @@ You can write latest and use latest **JavaScript**.
     https://www.digitalocean.com/community/tutorials/how-to-install-node-js-on-ubuntu-16-04
 ```
 
+### Setup:
+```clone
+	git clone https://github.com/rajkumararisetty/react-complete-boilerplate.git
+```
+
 This starter kit configured with all 3 environments:
 
 ```env
-	Developer mode: npm start
+	Development Env: npm start
+    Test Env:		 npm test
+    Production Env:	 npm run build
 ```
