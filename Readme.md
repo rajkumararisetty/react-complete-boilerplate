@@ -20,7 +20,7 @@ You can write latest and use latest **JavaScript**.
 This starter kit configured with all 3 environments:
 
 ```env
-    Development Env: npm start
+    Development Env:     npm start
     Test Env:		 npm test
     Production Env:	 npm run build
 ```
